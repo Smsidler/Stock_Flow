@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockFlow WMS - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">S</div>
+      <div>
+        <strong>StockFlow</strong>
+        <span>WMS</span>
+      </div>
+    </div>
+
+    <nav>
+      <a class="nav-item active" href="#"><span>⌂</span> Inicio</a>
+      <a class="nav-item" href="#"><span>↓</span> Entrada <b>›</b></a>
+      <a class="nav-item" href="#"><span>↑</span> Salida <b>›</b></a>
+      <a class="nav-item" href="#"><span>↩</span> Devoluciones</a>
+      <a class="nav-item" href="#"><span>⇄</span> Transferencias</a>
+      <a class="nav-item" href="#"><span>▣</span> Órdenes de trabajo</a>
+      <a class="nav-item" href="#"><span>▤</span> Informes <b>›</b></a>
+      <a class="nav-item" href="#"><span>⌁</span> Reetiquetado <b>›</b></a>
+      <a class="nav-item" href="#"><span>▦</span> Inventario <b>›</b></a>
+      <a class="nav-item" href="#"><span>⚙</span> Datos básicos <b>›</b></a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a class="nav-item" href="#"><span>?</span> Ayuda</a>
+      <a class="nav-item" href="#"><span>⇥</span> Cerrar sesión</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Panel principal</p>
+        <h1>Resumen del almacén</h1>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn">⌕</button>
+        <button class="icon-btn">♢</button>
+        <div class="user">
+          <div class="avatar">SS</div>
+          <div>
+            <strong>Santiago</strong>
+            <span>Administrador</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <div>
+        <span class="status-dot"></span>
+        Sistema operativo
+      </div>
+      <button class="date-btn">Últimos 30 días ▾</button>
+    </section>
+
+    <section class="kpi-grid">
+      <article class="kpi-card">
+        <div class="kpi-icon blue">▦</div>
+        <div><span>Stock disponible</span><strong>12.480</strong><small class="positive">+8,4% vs. mes anterior</small></div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-icon green">↓</div>
+        <div><span>Entradas</span><strong>1.284</strong><small class="positive">+12,1% vs. mes anterior</small></div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-icon orange">↑</div>
+        <div><span>Salidas</span><strong>1.096</strong><small class="negative">-3,2% vs. mes anterior</small></div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-icon purple">⚠</div>
+        <div><span>Stock bajo</span><strong>27</strong><small class="warning">Requieren atención</small></div>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel chart-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Movimiento de inventario</h2>
+            <p>Entradas y salidas durante el período seleccionado</p>
+          </div>
+          <div class="legend"><span><i class="dot entry"></i>Entradas</span><span><i class="dot exit"></i>Salidas</span></div>
+        </div>
+        <div class="chart">
+          <div class="y-labels"><span>1.500</span><span>1.000</span><span>500</span><span>0</span></div>
+          <div class="chart-area">
+            <div class="grid-lines"><i></i><i></i><i></i><i></i></div>
+            <svg viewBox="0 0 800 260" preserveAspectRatio="none" aria-label="Gráfico de inventario">
+              <polyline class="line-entry" points="0,185 100,160 200,172 300,110 400,132 500,85 600,100 700,58 800,72"/>
+              <polyline class="line-exit" points="0,205 100,185 200,198 300,155 400,168 500,145 600,152 700,118 800,130"/>
+            </svg>
+            <div class="x-labels"><span>15 Ago</span><span>20 Ago</span><span>25 Ago</span><span>30 Ago</span><span>04 Sep</span><span>09 Sep</span><span>14 Sep</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Estado de operaciones</h2>
+            <p>Actividad actual del almacén</p>
+          </div>
+          <a href="#" class="link">Ver todo</a>
+        </div>
+        <div class="operation-list">
+          <div class="operation"><span class="op-icon blue">↓</span><div><strong>Recepciones</strong><small>2 pendientes</small></div><b>2</b></div>
+          <div class="operation"><span class="op-icon green">✓</span><div><strong>Pedidos listos</strong><small>En preparación</small></div><b>18</b></div>
+          <div class="operation"><span class="op-icon orange">↻</span><div><strong>Transferencias</strong><small>En tránsito</small></div><b>4</b></div>
+          <div class="operation"><span class="op-icon red">!</span><div><strong>Incidencias</strong><small>Requieren revisión</small></div><b>3</b></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel">
+        <div class="panel-head"><div><h2>Productos con stock bajo</h2><p>Revisa estos SKU antes de generar nuevos pedidos</p></div><a class="link" href="#">Ver inventario →</a></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>SKU</th><th>Producto</th><th>Stock</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>SKU-00125</td><td>Teclado mecánico RGB</td><td><strong>4</strong></td><td><span class="badge danger">Crítico</span></td></tr>
+              <tr><td>SKU-00482</td><td>Mouse inalámbrico Pro</td><td><strong>8</strong></td><td><span class="badge warning-badge">Bajo</span></td></tr>
+              <tr><td>SKU-00831</td><td>Hub USB-C 7 en 1</td><td><strong>11</strong></td><td><span class="badge warning-badge">Bajo</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel quick-panel">
+        <div class="panel-head"><div><h2>Acciones rápidas</h2><p>Accede a las tareas más utilizadas</p></div></div>
+        <div class="quick-actions">
+          <button><span>＋</span><div><strong>Ajustar inventario</strong><small>Agregar o descontar unidades</small></div></button>
+          <button><span>⇄</span><div><strong>Transferir stock</strong><small>Mover productos entre ubicaciones</small></div></button>
+          <button><span>▤</span><div><strong>Nuevo informe</strong><small>Consultar movimientos y stock</small></div></button>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
